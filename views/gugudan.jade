@@ -1,0 +1,31 @@
+doctype html
+html
+  head
+    title 구구단
+    style.
+        h1 { 
+            color: #444;
+        }
+        
+        li {
+            font-size: 18px;
+            color: green;
+        }
+  body
+    h1 구구단
+    
+    form(method="GET", action="/gugu")
+        div
+            input(type="text", name="dan", placeholder="단을 입력해주세요.")
+        div
+            input(type="submit", value="시작")
+    if guguInfo.dan
+        h3 #{guguInfo.dan}단 결과
+        
+        ul
+        each r in guguInfo.result
+            li= r  
+          
+        ul
+        each r in [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            li= guguInfo.dan + ' * ' +  r + ' = ' + (guguInfo.dan * r)
